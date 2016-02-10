@@ -2639,9 +2639,9 @@ MainWindow::SerialError(
     else if (speErrorCode == QSerialPort::ResourceError || speErrorCode == QSerialPort::PermissionError)
     {
         //Resource error or permission error (device unplugged?)
-        QString strMessage = tr("Fatal error with serial connection.\nPlease reconnect to the device to continue.");
-        gpmErrorForm->show();
-        gpmErrorForm->SetMessage(&strMessage);
+//        QString strMessage = tr("Fatal error with serial connection.\nPlease reconnect to the device to continue.");
+//        gpmErrorForm->show();
+//        gpmErrorForm->SetMessage(&strMessage);
         ui->text_TermEditData->SetSerialOpen(false);
 
         //Disable timer
@@ -2650,7 +2650,7 @@ MainWindow::SerialError(
         if (gspSerialPort.isOpen() == true)
         {
             //Close active connection
-            gspSerialPort.close();
+//            gspSerialPort.close();
         }
 
         if (gbStreamingFile == true)
@@ -2697,7 +2697,7 @@ MainWindow::SerialError(
         ui->btn_TermClose->setText("&Open Port");
 
         //Update images
-        UpdateImages();
+//        UpdateImages();
 
         //Close log file if open
         if (gpMainLog->IsLogOpen() == true)
